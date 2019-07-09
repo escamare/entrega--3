@@ -1,0 +1,93 @@
+/* 
+NO DEJEN ESTO TAL Y COMO ESTÁ 
+Seleccionen un buen "pairing" de tipografías
+*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
+
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.jumbotron {
+  font-family: 'Roboto', sans-serif;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .jumbotron {
+      
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+.gradient-bg {
+  background: linear-gradient(145deg, #fcbe71, #f79780, #f1758c, #ef479e);
+  z-index: -2;
+  transition: opacity 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 0s;
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 500;
+  color: #283466; 
+    
+}
+#ef479e
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+@media (min-width: 1200px) { .card-columns { column-count: 4; }}
+
+@media (max-width: 768px) { .card-columns { column-count: 1; }}
+
+#grupal{
+  margin:0 1rem;
+}
+
+#navbar2 {
+  color: #283466;
+  background-color: #283466;
+    
+}
+
+#navbar {
+    color: #fcbe71;
+    
+}
+
+#divs {
+  background-color: #283466;  
+}
+
+.card{
+  border:none;
+  border-radius: 0;
+  background:#eee;
+}
+
+.card-img-top{
+  border-radius: 0;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+
+#footer {
+     background-color: #283466; 
+     color: white;
+}

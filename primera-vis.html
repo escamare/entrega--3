@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Bienvenido | Tiempo</title>
+  </head>
+
+    
+    <body class="bg-light">
+  <div class="container pb-5">
+    <div class="row pb-5">  
+      <div class="col-sm-10 pt-4 pb-2">
+        <h1>Nuestra Música</h1>
+      </div>
+      <div class="col-sm-2 text-right pt-5 pb-2 d-none d-sm-block">
+        <a href="info.html" id="especial">Info</a>
+      </div>
+      <div class="col-sm-12 p-0 mb-3" id="vis">
+        <!--acá estoy metiendo el canvas con p5.js-->
+      </div>
+      <div class="col-sm-8">
+        <h3 class="border-bottom py-2">Streaming </h3>
+        <p>Esta visualización muestra el streaming de cada una desde el 3 de julio de 2019 hasta el 9 de julio de 2019 en spotify </p>
+      </div>
+      <div class="col-sm-4 small">
+        <h5 class="border-bottom pt-3 pb-2">Datos</h5>
+        <p>Si quieres descubrir los tuyos visita: <a href="https://spotify.me/es">Spotify</a>.</p>
+      </div>
+    </div><!--acá cierro el row-->
+  </div><!--acá cierro el container-->
+
+  <nav class="navbar fixed-bottom navbar-expand-md navbar-light" id="colorabajo">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Nuestra Música</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="primera-vis.html">Streaming</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="segunda-vis.html">H vs M</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cuarta.html">Género</a>
+          </li>                           
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Estábamos en p5.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
+    <script>
+        var plata;
+        var w, h;
+        
+        function preload(){
+            plata = loadJSON("https://api.myjson.com/bins/p4p5j");
+           
+        }
+        function setup() {
+        var w = document.getElementById('vis').offsetWidth;
+        var h = w/2;
+        createCanvas(w,h).parent("vis");
+        background(255);
+            textAlign(CENTER);
+            rectMode(CENTER);
+            textSize (17)
+             fill(239, 71, 158);
+            noStroke();
+            plata.Musica.forEach(function(plata,i){
+                ellipse((width/9)*(1+i), height/2, plata.minutos/14, plata.minutos/14);
+                text(plata.nombre, (width/9)*(1+i), (height/2)+120, 100, 100);
+               
+           
+            });
+        }
+        function draw(){
+         fill(252, 190, 113);
+            text("1.380min",125,290);
+            
+            fill(252, 190, 113);
+            text("1.422min",252,290);
+            
+            fill(252, 190, 113);
+            text("1.510min",380,290);
+            
+            fill(252, 190, 113);
+            text("1.353min",508,290);
+        
+      }
+    </script>
+  </body>
+</html>
